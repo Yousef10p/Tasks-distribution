@@ -69,8 +69,14 @@ function updateTable(obj) {
 
 
 submitLoadProb.addEventListener('click', () => {
-    loadsOfTasks = [inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value];
-    probability = [inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value];
+    let temp = [];
+    inputs.forEach(input => {
+        temp.push(parseInt(input.value, 10));
+    })
+        
+    
+    loadsOfTasks = [temp[0], temp[1], temp[2], temp[3], temp[4]];
+    probability = [temp[5], temp[6], temp[7], temp[8], temp[9]];
     
     arrayOftasks.forEach((task,index) => {
         task.load = loadsOfTasks[index];
